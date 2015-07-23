@@ -1,0 +1,37 @@
+using System;
+
+namespace OddEvenSumDemo
+{
+	class Program
+	{
+		public static void Main(string[] args)
+		{
+			int n = int.Parse(Console.ReadLine());
+			int sum1 = 0;
+			int sum2 = 0;
+			for(int i = 1; i <= 2 * n; i++)
+			{
+				int numbers = int.Parse(Console.ReadLine());
+				if(i % 2 == 0)
+				{
+					sum1 = sum1 + numbers;
+				}
+				else if(i % 2 != 0)
+				{
+					sum2 = sum2 + numbers;
+				}
+			}
+			if(sum1 == sum2)
+			{
+				Console.WriteLine("Yes, sum={0}", sum1);
+			}
+			else if(sum1 != sum2)
+			{
+				int result = Math.Abs(sum1 - sum2);
+				Console.WriteLine("No, diff={0}", result);
+			}
+			Console.Write("Press any key to continue . . . ");
+			Console.ReadKey(true);
+		}
+	}
+}
